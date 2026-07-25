@@ -1,1 +1,8 @@
+bleak==3.0.2
+dbus-fast==5.0.22
+meshcore==2.3.7
 paho-mqtt==2.1.0
+pycayennelpp==2.4.0
+pycryptodome==3.23.0
+pyserial==3.5
+pyserial-asyncio-fast==0.16
