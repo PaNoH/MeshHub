@@ -81,6 +81,12 @@ def publish_event(kind, event):
             "sender_timestamp": event_payload.get("sender_timestamp"),
         }
 
+    meshcore_metadata = {
+        "path_len": event_payload.get("path_len"),
+        "path_hash_mode": event_payload.get("path_hash_mode"),
+        "txt_type": event_payload.get("txt_type"),
+    }
+
     message = {
         "source": "meshcore",
         "network": "meshcore",
@@ -93,6 +99,7 @@ def publish_event(kind, event):
             "adapter": "meshcore",
             "serial_port": SERIAL_PORT,
             "meshcore_attributes": event_attributes,
+            "meshcore": meshcore_metadata,
         },
     }
 
