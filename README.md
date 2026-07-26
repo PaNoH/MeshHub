@@ -403,3 +403,12 @@ Do not assume a license merely because the repository is public.
 ---
 
 **MeshHub: understand first, route intentionally.**
+
+
+## Support the project
+
+If you find MeshHub useful and want to support further development:
+
+[![Support MeshHub on Ko-fi](https://img.shields.io/badge/Ko--fi-Support%20MeshHub-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/pannoh)
+
+Support is completely optional.
