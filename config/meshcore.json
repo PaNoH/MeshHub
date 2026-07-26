@@ -1,0 +1,7 @@
+{
+  "serial_port": "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5968021541-if00",
+  "serial_baud": 115200,
+  "mqtt_host": "localhost",
+  "mqtt_port": 1883,
+  "mqtt_topic": "meshhub/input/meshcore"
+}

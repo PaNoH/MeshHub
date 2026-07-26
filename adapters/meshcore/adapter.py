@@ -2,17 +2,23 @@ import asyncio
 import json
 import logging
 from datetime import datetime, timezone
+from pathlib import Path
 
 import paho.mqtt.client as mqtt
 from meshcore import MeshCore, EventType
 
 
-SERIAL_PORT = "/dev/serial/by-id/usb-1a86_USB_Single_Serial_5968021541-if00"
-SERIAL_BAUD = 115200
+CONFIG_FILE = Path(__file__).resolve().parents[2] / "config" / "meshcore.json"
 
-MQTT_HOST = "localhost"
-MQTT_PORT = 1883
-MQTT_TOPIC = "meshhub/input/meshcore"
+with CONFIG_FILE.open("r", encoding="utf-8") as f:
+    config = json.load(f)
+
+SERIAL_PORT = config["serial_port"]
+SERIAL_BAUD = int(config.get("serial_baud", 115200))
+
+MQTT_HOST = config.get("mqtt_host", "localhost")
+MQTT_PORT = int(config.get("mqtt_port", 1883))
+MQTT_TOPIC = config.get("mqtt_topic", "meshhub/input/meshcore")
 
 
 logging.basicConfig(
